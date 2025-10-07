@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Machine Condition Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 420px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 16px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            width: 48%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .predict {
+            background: #4CAF50;
+            color: white;
+        }
+        .reset {
+            background: #f44336;
+            color: white;
+        }
+        .result {
+            margin-top: 20px;
+            background: #eef5ff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .inputs-list {
+            font-size: 0.9em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Predict Machine Condition</h2>
+        <form method="POST">
+            <label>Process Temperature</label>
+            <input type="number" name="process_temperature" step="any" required>
+
+            <label>Air Temperature</label>
+            <input type="number" name="air_temperature" step="any" required>
+
+            <label>Rotational Speed</label>
+            <input type="number" name="rotational_speed" step="any" required>
+
+            <label>Torque</label>
+            <input type="number" name="torque" step="any" required>
+
+            <label>Tool Wear</label>
+            <input type="number" name="tool_wear" step="any" required>
+
+            <label>Type (H / M / L)</label>
+            <input type="text" name="type" maxlength="1" placeholder="Enter H, M, or L" required>
+
+            <div class="buttons">
+                <button type="submit" name="action" value="predict" class="predict">Predict</button>
+                <button type="submit" name="action" value="reset" class="reset">Reset</button>
+            </div>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            <strong>Result:</strong><br>
+            <div class="inputs-list">
+                {% if inputs %}
+    {% for key, value in inputs.items() %}
+        {{ key }}: {{ value }}<br>
+    {% endfor %}
+{% endif %}
+            </div>
+            <p><b>Predicted Value:</b> {{ prediction }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
