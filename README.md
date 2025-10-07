@@ -104,8 +104,9 @@ A lightweight **Flask** interface allows users to input machine parameters and r
 
 ## 🧪 Example Usage
 
-1. Go to the deployed app: [🔗 Live Demo on Render](https://machinetoolfailuredetection.onrender.com/) 
-2. Input the following values:
+1. Go to the deployed app: [🔗 Live Demo on Render](https://machinetoolfailuredetection.onrender.com/)
+2. [Youtube Demo](#)
+3. Input the following values:
 
 | Feature | Example Input |
 |----------|----------------|
@@ -130,22 +131,6 @@ A lightweight **Flask** interface allows users to input machine parameters and r
 - **matplotlib**, **seaborn**  
 - **Render.com**  
 - **GitHub**
-
-## 📂 Repository Structure
-
-machine-tool-condition-detection/
-│
-├── app.py # Flask web application
-├── best_lof_model.pkl # Trained LOF model
-├── templates/
-│ └── index.html # Frontend form
-├── static/
-│ └── style.css # Styling (if any)
-├── requirements.txt # Dependencies
-├── README.md # Project documentation
-└── data/
-└── sample_input.csv # Example test data
-
 
 ---
 
