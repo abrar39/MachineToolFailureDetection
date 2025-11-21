@@ -105,7 +105,7 @@ A lightweight **Flask** interface allows users to input machine parameters and r
 ## 🧪 Example Usage
 
 1. Go to the deployed app: [🔗 Live Demo on Render](https://machinetoolfailuredetection.onrender.com/)
-2. [Youtube Demo](#)
+2. [Youtube Demo](https://youtu.be/bnHs0urwd6c)
 3. Input the following values:
 
 | Feature | Example Input |
